@@ -1,0 +1,6 @@
+10,ronak,helloronak,admin
+20,simba,hellosimba,manager
+30,mohit,hellomohit,employee
+40,rohan,hellorohan,admin
+20,mayur,hellomayur,manager
+60,riya ,helloriya ,employee
