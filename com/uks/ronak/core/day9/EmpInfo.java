@@ -2,7 +2,7 @@ package com.uks.ronak.core.day9;
 
 import java.io.Serializable;
 
-public class EmpInfo implements Serializable {
+public class EmpInfo extends Thread implements Serializable {
     public int userId;
     public String firstName;
     public String lastName;
@@ -13,6 +13,10 @@ public class EmpInfo implements Serializable {
     public String city;
     public long mobileNumber;
     public long basicSalary;
+
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
+    }
 
     // this constructor for userLogInInfoFile
     public EmpInfo(int userId, String userName, String password, String userRole) {
@@ -30,6 +34,16 @@ public class EmpInfo implements Serializable {
         this.city = city;
         this.basicSalary = basicSalary;
         this.mobileNumber = mobileNumber;
+    }
+    public EmpInfo(int userId, String firstName, String lastName, String address, String city, long basicSalary, long mobileNumber,String userRole) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.basicSalary = basicSalary;
+        this.mobileNumber = mobileNumber;
+        this.userRole=userRole;
     }
 
     public int getUserId() {

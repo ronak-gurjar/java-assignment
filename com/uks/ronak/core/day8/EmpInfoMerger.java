@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class EmpInfoMerger extends Thread {
     String file;
     String mode;
-    boolean flag = false;
     // shared variable for store file data
     static List<String> list = new ArrayList<>();
 
