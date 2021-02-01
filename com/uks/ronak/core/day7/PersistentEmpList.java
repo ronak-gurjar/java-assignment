@@ -9,7 +9,7 @@ class persistentEmpList {
     public void serialization(Hashtable<Integer, EmployeeDetail> table) {
         FileOutputStream fileOutputStream;
         try {
-            fileOutputStream = new FileOutputStream("src/com/uks/ronak/core/day7/emp.ser");
+            fileOutputStream = new FileOutputStream("src/com/uks/ronak/core/day7/emp.txt");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             // table data write in object
             objectOutputStream.writeObject(table);
@@ -23,7 +23,7 @@ class persistentEmpList {
 
     public void deserialization() throws ClassNotFoundException {
         try {
-            FileInputStream fileInputStream = new FileInputStream("src/com/uks/ronak/core/day7/emp.ser");
+            FileInputStream fileInputStream = new FileInputStream("src/com/uks/ronak/core/day7/emp.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             // read the table data and store in table and print the value
             Hashtable<Integer, EmployeeDetail> table = (Hashtable<Integer, EmployeeDetail>) objectInputStream.readObject();
@@ -47,21 +47,21 @@ class persistentEmpList {
 
         System.out.println("enter size of employee");
         int size = scanner.nextInt();
-        String[] name = new String[size];
-        long[] basicSalary = new long[size];
-        byte[] age = new byte[size];
+        String name;
+        long basicSalary;
+        byte age;
         for (int i = 0; i < size; i++) {
             scanner.nextLine();
             System.out.println("enter name");
-            name[i] = scanner.nextLine();
+            name = scanner.nextLine();
 
             System.out.println("enter age");
-            age[i] = scanner.nextByte();
+            age = scanner.nextByte();
 
             System.out.println("enter basic salary");
-            basicSalary[i] = scanner.nextLong();
-// all data store in table
-            table.put(i, new EmployeeDetail(name[i], age[i], basicSalary[i]));
+            basicSalary = scanner.nextLong();
+            // all data store in table
+            table.put(i, new EmployeeDetail(name, age, basicSalary));
         }
         emp.serialization(table);
         emp.deserialization();

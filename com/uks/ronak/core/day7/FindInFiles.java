@@ -9,17 +9,8 @@ import java.util.regex.Pattern;
 
 public class FindInFiles {
 
+    // read file
     public void read(String filepath) {
-     /*   RandomAccessFile file = new RandomAccessFile(filepath, "r");
-        FileChannel fileChannel = file.getChannel();
-        MappedByteBuffer buffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, fileChannel.size());
-        buffer.load();
-        for (int i = 0; i < buffer.limit(); i++) {
-            System.out.print((char) buffer.get());
-        }
-        buffer.clear();
-        fileChannel.close();
-        file.close();*/
         File file = new File(filepath);
         Scanner scanner = null;
         try {
@@ -36,6 +27,7 @@ public class FindInFiles {
         System.out.println(buffer);
     }
 
+    // search in file
     public void search(String string, String filepath) throws FileNotFoundException {
         int lineNum = 0;
         boolean flag = true;
@@ -48,16 +40,7 @@ public class FindInFiles {
                 for (File data : fileList) {
                     if (data.isDirectory()) {
                         search(string, data.toString());
-                       /* Scanner scanner = new Scanner(data.toString());
-                        while (scanner.hasNextLine()) {
-                            String data1 = scanner.nextLine();
-                            matcher = pattern.matcher(data1);
-                            lineNum++;
-                            if (matcher.find()) {
-                                System.out.println(data.getAbsoluteFile() + "  in \"" + string + "\"" + " " + "found at line number:" + lineNum);
-                                break;
-                            }
-                        }*/
+
                     } else {
                         Scanner scanner = new Scanner(data);
                         while (scanner.hasNextLine()) {

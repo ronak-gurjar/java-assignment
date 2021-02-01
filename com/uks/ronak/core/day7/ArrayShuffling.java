@@ -18,16 +18,12 @@ public class ArrayShuffling {
 
     public static void main(String[] args) {
         ArrayShuffling arr = new ArrayShuffling();
-       /* String[] arr = {"ronak", "riya", "mohit", "ajay", "vijay"};
-        List<String> list = Arrays.asList(arr);
-        Collections.shuffle(list);
-        System.out.println(Arrays.toString(arr));*/
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter the size of array");
         int size = scanner.nextInt();
         scanner.nextLine();
         String[] array = new String[size];
-        System.out.println("enter element");
+        System.out.println("enter string element");
         for (int i = 0; i < array.length; i++) {
             array[i] = scanner.nextLine();
         }
