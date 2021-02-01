@@ -40,17 +40,15 @@ class UserInteraction {
                     e.printStackTrace();
                     throw new InvalidInputException("invalid input exception");
                 }
+                break;
             case "b":
                 StringOperation stringOperation = new StringOperation();
-                Scanner sc = new Scanner(System.in);
-
                 System.out.println("enter string");
                 String string = scanner.nextLine();
                 stringOperation.doOperationWithRegEx(string);
+                break;
             case "c":
                 StringOperation stringOperation1 = new StringOperation();
-                Scanner s = new Scanner(System.in);
-
                 System.out.println("enter string");
                 String st = scanner.nextLine();
                 stringOperation1.doOperation(st);
@@ -59,7 +57,7 @@ class UserInteraction {
                 DateAndTime dateAndTime = new DateAndTime();
                 System.out.println("enter pattern for format date");
                 String pattern = scanner.nextLine();
-                System.out.println("enter today date in this format (\"yyyy/MM/dd\") ");
+                System.out.println("enter date in this format (\"yyyy/MM/dd\") ");
                 String inputDate = scanner.nextLine();
                 try {
                     dateAndTime.dateTime(pattern, inputDate);
@@ -123,7 +121,7 @@ class UserInteraction {
                 try {
                     size = scanner.nextInt();
                 } catch (Exception e) {
-                    throw new InvalidInputException("not vlid");
+                    throw new InvalidInputException("not valid");
                 }
                 scanner.nextLine();
                 String[] str = new String[size];
@@ -149,7 +147,7 @@ class UserInteraction {
                 break;
             case "j":
                 EmployeeSortedList employeeSortedList = new EmployeeSortedList(1, "s", "ss", "ss", 11);
-                System.out.println("or choose [fname],[lname],[salary],[etype]");
+                System.out.println("enter collum name [ecode], [fname],[lname],[salary],[etype]");
                 String cName = scanner.nextLine();
                 try {
                     employeeSortedList.sortedList(cName);

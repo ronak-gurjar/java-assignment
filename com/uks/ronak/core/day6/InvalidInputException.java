@@ -13,7 +13,7 @@ public class InvalidInputException extends Throwable {
 
     public static void main(String[] args) {
         try {
-            throw new InvalidInputException("in valid input exception occur");
+            throw new InvalidInputException("invalid input exception occur");
         } catch (InvalidInputException invalidInputException) {
             System.out.println(invalidInputException);
             invalidInputException.printStackTrace();
