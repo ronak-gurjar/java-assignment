@@ -79,9 +79,9 @@ public class EmpInfoMerger extends Thread {
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        EmpInfoMerger nameFileRead = new EmpInfoMerger("/home/reo/IdeaProjects/brilworks assignment/src/com/uks/ronak/core/day8/name.txt", "read");
-        EmpInfoMerger addFileRead = new EmpInfoMerger("/home/reo/IdeaProjects/brilworks assignment/src/com/uks/ronak/core/day8/address.txt", "read");
-        EmpInfoMerger newFileWrite = new EmpInfoMerger("/home/reo/IdeaProjects/brilworks assignment/src/com/uks/ronak/core/day8/newFileName.txt", "write");
+        EmpInfoMerger nameFileRead = new EmpInfoMerger("src/com/uks/ronak/core/day8/name.txt", "read");
+        EmpInfoMerger addFileRead = new EmpInfoMerger("src/com/uks/ronak/core/day8/address.txt", "read");
+        EmpInfoMerger newFileWrite = new EmpInfoMerger("src/com/uks/ronak/core/day8/newFileName.txt", "write");
         nameFileRead.start();
         // addFile thread sleep for 20ms
         sleep(20);
