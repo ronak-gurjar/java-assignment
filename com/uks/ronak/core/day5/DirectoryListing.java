@@ -7,24 +7,13 @@ public class DirectoryListing {
 
     public void print(String filePath, boolean recursive, String[] extension) throws IOException {
         File file = new File(filePath);
-        /*implement fileNameFilter interface
-         this interface has accept method to check file dir and name
-        FilenameFilter filenameFilter = (dir, name) -> {
-            // file name
-            for (String ext : extension) {
-                if (name.endsWith(ext)) {
-                    return true;
-                }
-            }
-            return false;
-        };*/
+
         File[] fileList = file.listFiles();
         if (fileList != null) {
             for (File data : fileList) {
                 if (data.isDirectory() == recursive) {
                     //recursive call
                     print(data.getAbsolutePath(), recursive, extension);
-                    // System.out.println("dir=" + data.getAbsoluteFile());
                 }
                 for (String ext : extension) {
                     if (data.toString().endsWith(ext)) {
@@ -38,9 +27,8 @@ public class DirectoryListing {
     public static void main(String[] args) {
         DirectoryListing directoryListing = new DirectoryListing();
         Scanner scanner = new Scanner(System.in);
-        /*System.out.println("enter the file path");
-        String filePath = scanner.nextLine();*/
-        String filePath = "C:\\Users\\hello\\Desktop\\brilworks\\core\\day5";
+        System.out.println("enter the file path");
+        String filePath = scanner.nextLine();
         File file = new File(filePath);
         // validate directory
         if (file.isDirectory() && file.exists()) {

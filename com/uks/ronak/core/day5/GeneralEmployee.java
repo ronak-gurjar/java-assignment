@@ -14,7 +14,5 @@ public class GeneralEmployee extends BaseEmployee {
     public GeneralEmployee(String firstName, String lastName, String empType, long basicSalary) {
         super(firstName, lastName, empType, basicSalary);
     }
-    public static void main(String[] args) throws IOException {
 
-    }
 }

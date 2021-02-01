@@ -17,12 +17,14 @@ public class RowPrinter {
             System.out.print(baseEmployee.getBasicSalary() + "\n");
         }
     }
+
     // this method for EmployeeSortedList
-    public  void printTabular() throws FileNotFoundException {
-        Scanner scanner=new Scanner(System.in);
+    public void printTabular() throws FileNotFoundException {
+        Scanner scanner = new Scanner(System.in);
         EmployeeSortedList employee = new EmployeeSortedList(1, "dd", "fff", "dsd", 5);
-        System.out.println("enter collum name for sort");
-        String cName= scanner.nextLine();
+        System.out.println("enter collum name for sort ");
+        System.out.println("[ecode],[fname],[lname],[salary],[etype]");
+        String cName = scanner.nextLine();
         List<EmployeeSortedList> list = employee.sortedList(cName);
         System.out.println("empCode   EmployeeName     EmpType    salary");
         System.out.println("-------------------------------------------------");
@@ -34,9 +36,10 @@ public class RowPrinter {
             System.out.printf("%10s", employeeSortedList.getBasicSalary() + "\n");
         }
     }
+
     public static void main(String[] args) throws FileNotFoundException {
-        RowPrinter rowPrinter= new RowPrinter();
-        rowPrinter.print();
-       rowPrinter.printTabular();
+        RowPrinter rowPrinter = new RowPrinter();
+        //rowPrinter.print();
+        rowPrinter.printTabular();
     }
 }
