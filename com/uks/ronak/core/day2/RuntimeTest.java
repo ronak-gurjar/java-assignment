@@ -11,9 +11,8 @@ public class RuntimeTest {
     // open notepad using processBuilder
     public void processBuilder() {
         // making a command list
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.add("notepad.exe");
-        // how environment variable display
         ProcessBuilder build = new ProcessBuilder(list);
         // start() command open the notepad
         try {
@@ -25,7 +24,7 @@ public class RuntimeTest {
         //for environment variable
         Map<String, String> environment = build.environment();
         //for printing key
-        for (Map.Entry s : environment.entrySet()) {
+        for (Map.Entry<String, String> s : environment.entrySet()) {
             System.out.println(s.getKey() + "->" + s.getValue());
         }
     }
@@ -42,7 +41,7 @@ public class RuntimeTest {
 
     public static void main(String[] args) throws IOException {
         RuntimeTest runtimeTest = new RuntimeTest();
-        runtimeTest.processBuilder();
-        //  runtimeTest.runTime();
+        //runtimeTest.processBuilder();
+        runtimeTest.runTime();
     }
 }

@@ -1,18 +1,13 @@
 package com.uks.ronak.core.day2;
 
-class PopulateArray {
-    int[] arr1 = new int[5];
-    int[] arr2 = new int[5];
-    int length = arr1.length + arr2.length;
-    int[] result = new int[length];
+import java.util.Scanner;
 
-    public void print() {
-        for (int i = 0; i < length; i++) {
-            // printing resultant array
-            System.out.print(result[i] + " ");
-        }
-    }
+class PopulateArray {
+    // resultant array
+    int[] result = new int[10];
+
     public void populateArray(int[] arr1, int[] arr2) {
+        int length = arr1.length + arr2.length;
 
         for (int i = 0, even = 0, odd = 0; i < length; i++) {
             if (i % 2 == 0) {
@@ -25,15 +20,31 @@ class PopulateArray {
                 odd++;
             }
         }
-        // printing array
-        //System.out.println(Arrays.toString(result));
+    }
+
+    public void print() {
+        for (int i = 0; i < 10; i++) {
+            // printing resultant array
+            System.out.print(result[i] + " ");
+        }
     }
 }
 
 public class ArrayPopulation {
     public static void main(String[] args) {
         PopulateArray populateArray = new PopulateArray();
-        populateArray.populateArray(new int[]{1, 2, 3, 4, 5}, new int[]{6, 7, 8, 9, 10});
+        Scanner scanner = new Scanner(System.in);
+        int[] arr1 = new int[5];
+        int[] arr2 = new int[5];
+        System.out.println("enter 5 element in arr1");
+        for (int i = 0; i < 5; i++) {
+            arr1[i] = scanner.nextInt();
+        }
+        System.out.println("enter 5 element in arr2");
+        for (int i = 0; i < 5; i++) {
+            arr2[i] = scanner.nextInt();
+        }
+        populateArray.populateArray(arr1, arr2);
         populateArray.print();
     }
 }

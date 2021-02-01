@@ -3,12 +3,9 @@ package com.uks.ronak.core.day2;
 import java.util.Scanner;
 
 class StringManipulation {
-    public void doOperationWithRegEx() {
+    public void doOperationWithRegEx(String string) {
         Scanner scanner = new Scanner(System.in);
-        // input taking from command line
-        System.out.println("enter string");
-        String string = scanner.nextLine();
-        System.out.println("enter num 1 to reverse string and num 2 count upper ,lower string : ");
+        System.out.println("enter num 1 to reverse string and num 2 count upper,lower string : ");
         int num = scanner.nextInt();
         //  System.out.println(buffer.reverse());
         if (num == 1) {
@@ -24,10 +21,10 @@ class StringManipulation {
             System.out.println(buffer);
         } else if (num == 2) {
             // making a three variable to counting a upper,lower and number
-            int upper = string.split("([A-Z]+?)").length;
-            int lower = string.split("([a-z]+?)").length;
-            int number = string.split("([0-9]+?)").length;
-            //int special = st.split("([!-/]+?)").length;
+            int upper = string.split("([A-Z])").length;
+            int lower = string.split("([a-z])").length;
+            int number = string.split("([0-9])").length;
+
             System.out.println("upper=" + (upper - 1));
             System.out.println("lower=" + (lower - 1));
             System.out.println("number=" + number);
@@ -38,10 +35,7 @@ class StringManipulation {
     }
 
     // assignment 4 question
-    public void doOperation() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("enter string for counting upper lower");
-        String st = scanner.nextLine();
+    public void doOperation(String st) {
         int upper = 0, lower = 0, number = 0, special = 0;
         for (int i = 0; i < st.length(); i++) {
             // ch=for counting char to char
@@ -65,8 +59,12 @@ class StringManipulation {
 public class StringOperation extends StringManipulation {
     public static void main(String[] args) {
         StringManipulation stringManipulation = new StringManipulation();
-        // stringManipulation.doOperationWithRegEx();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("enter string");
+        String string = scanner.nextLine();
+        stringManipulation.doOperationWithRegEx(string);
         // assignment 4 question
-        stringManipulation.doOperation();
+        //  stringManipulation.doOperation(string);
     }
 }

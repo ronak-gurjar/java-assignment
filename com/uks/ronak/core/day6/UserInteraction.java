@@ -42,10 +42,18 @@ class UserInteraction {
                 }
             case "b":
                 StringOperation stringOperation = new StringOperation();
-                stringOperation.doOperationWithRegEx();
+                Scanner sc = new Scanner(System.in);
+
+                System.out.println("enter string");
+                String string = scanner.nextLine();
+                stringOperation.doOperationWithRegEx(string);
             case "c":
                 StringOperation stringOperation1 = new StringOperation();
-                stringOperation1.doOperation();
+                Scanner s = new Scanner(System.in);
+
+                System.out.println("enter string");
+                String st = scanner.nextLine();
+                stringOperation1.doOperation(st);
                 break;
             case "d":
                 DateAndTime dateAndTime = new DateAndTime();
@@ -118,13 +126,13 @@ class UserInteraction {
                     throw new InvalidInputException("not vlid");
                 }
                 scanner.nextLine();
-                String[] string = new String[size];
+                String[] str = new String[size];
                 System.out.println("enter the string");
                 for (int i = 0; i < size; i++) {
-                    string[i] = scanner.nextLine();
+                    str[i] = scanner.nextLine();
                 }
                 try {
-                    frequencyChecker.frequencyChecker(string);
+                    frequencyChecker.frequencyChecker(str);
                 } catch (Exception e) {
                     throw new InvalidInputException("invalid input exception");
                 }

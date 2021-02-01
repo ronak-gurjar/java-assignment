@@ -3,28 +3,22 @@ package com.uks.ronak.core.day2;
 import java.util.Scanner;
 
 class CheckForVowel {
-    public void checkChar() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("1=>vowel");
-        System.out.println("2=>constant");
+    public void checkChar(char ch) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1 => vowel");
         System.out.print("enter choice=");
-        int choice = sc.nextInt();
-        System.out.print("enter character=");
-        char ch = sc.next().charAt(0);
+        int choice = scanner.nextInt();
 
         switch (choice) {
             case 1:
                 if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U') {
                     System.out.println("it is vowel");
-                    break;
-                }
-            case 2:
-                if (ch != 'a' || ch != 'A' || ch != 'e' || ch != 'E' || ch != 'i' || ch != 'I' || ch != 'o' || ch != 'O' || ch != 'u' || ch != 'U') {
+                } else {
                     System.out.println("it is constant");
-                    break;
                 }
+                break;
             default:
-                System.out.println("enter valid choise");
+                System.out.println("enter valid choice");
         }
     }
 }
@@ -32,7 +26,11 @@ class CheckForVowel {
 public class VowelConstant {
     public static void main(String[] args) {
         CheckForVowel ob = new CheckForVowel();
-        ob.checkChar();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("enter character=");
+        char ch = scanner.next().charAt(0);
+        ob.checkChar(ch);
 
     }
 }
