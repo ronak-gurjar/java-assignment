@@ -10,10 +10,9 @@ import java.util.Scanner;
 public class DateAndTime {
     // method
     public void dateTime(String outputFormatType, String date) throws ParseException {
-        Date simpleDate = new Date(date);
+        Date simpleDate = new SimpleDateFormat("yyyy/MM/dd").parse(date);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(outputFormatType);
         System.out.println(simpleDateFormat.format(simpleDate));
-
     }
 
     public static void main(String[] args) throws ParseException {
@@ -29,8 +28,10 @@ public class DateAndTime {
             ob.dateTime(pattern, inputDate);
 
         } else {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             LocalDateTime localDateTime = LocalDateTime.now();
+            //parsing today date in this  yyyy/MM/dd format
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
             ob.dateTime(pattern, localDateTime.format(formatter));
 
         }
