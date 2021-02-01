@@ -1,9 +1,10 @@
 package com.uks.ronak.core.day4;
 
 public class Employee {
-    private String firstName;
+    // declare access modifier for each property
+    public String firstName;
     private String lastName;
-    private String empType;
+    protected String empType;
 
     public Employee(String firstName, String lastName, String empType) {
         this.firstName = firstName;

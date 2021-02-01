@@ -10,8 +10,7 @@ public class FrequencyChecker {
         Map<String, Integer> map = new TreeMap<>();
         // in hashmap print string in random order
         // Map<String, Integer> map = new HashMap<>();
-        // Splitting to find the word
-        // String[] arr = str.split(" ");
+
         for (String s : string) {
             // Condition to check if the array element is present the map
             if (map.containsKey(s)) {

@@ -11,6 +11,7 @@ interface IReport {
 public abstract class BaseEmployee implements IWork {
     //abstract method
     public abstract void doWork();
+
     // final  void doWork();// this method cannot be override
     // public static  void doWork();// this method cannot be override
     //private void doWork();//it is clash with iwork method
