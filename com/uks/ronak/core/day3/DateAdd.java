@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DateAdd {
+    // declare constant
     public static final String MONTH = "month";
     public static final String DAY = "day";
     public static final String YEAR = "year";
@@ -42,6 +43,7 @@ public class DateAdd {
                 System.out.println("wrong addType");
         }
     }
+
     public static void main(String[] args) throws Exception {
 
     }

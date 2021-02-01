@@ -21,13 +21,13 @@ public class DateAndTime {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter pattern for format date");
         String pattern = scanner.nextLine();
-        System.out.println("enter [yes] if you want to format date");
+        System.out.println("enter [yes] if you want to format specific date");
         String choice = scanner.nextLine();
         if (choice.equalsIgnoreCase("yes")) {
             System.out.println("enter date in this format (\"yyyy/MM/dd\") ");
             String inputDate = scanner.nextLine();
             ob.dateTime(pattern, inputDate);
-            System.out.println(inputDate);
+
         } else {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
             LocalDateTime localDateTime = LocalDateTime.now();
