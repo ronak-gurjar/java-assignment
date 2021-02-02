@@ -2,10 +2,12 @@ package com.uks.ronak.core.day2;
 
 import java.util.Scanner;
 
-class CheckForVowel {
+
+public class VowelConstant {
     public void checkChar(char ch) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1 => vowel");
+        System.out.println("1 => check vowel");
+
         System.out.print("enter choice=");
         int choice = scanner.nextInt();
 
@@ -20,17 +22,5 @@ class CheckForVowel {
             default:
                 System.out.println("enter valid choice");
         }
-    }
-}
-
-public class VowelConstant {
-    public static void main(String[] args) {
-        CheckForVowel ob = new CheckForVowel();
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("enter character=");
-        char ch = scanner.next().charAt(0);
-        ob.checkChar(ch);
-
     }
 }
