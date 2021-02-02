@@ -132,7 +132,7 @@ public class EmployeeSortedList implements Comparable<EmployeeSortedList> {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
         EmployeeSortedList employeeSortedList = new EmployeeSortedList(1, "dfd", "Ddd", "dd", 2);
-        System.out.println("1 -> default sorting base on emocode ");
+        System.out.println("1 -> default sorting based on empcode ");
         System.out.println("or choose [fname],[lname],[salary],[etype]");
         String cName = scanner.nextLine();
         if (cName.equals("1")) {
