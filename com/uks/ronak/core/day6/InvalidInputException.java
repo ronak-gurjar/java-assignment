@@ -6,6 +6,7 @@ public class InvalidInputException extends Throwable {
     public InvalidInputException(String str) {
         this.message = str;
     }
+
     @Override// this is Throwable class override method
     public String getMessage() {
         return message;
@@ -14,9 +15,9 @@ public class InvalidInputException extends Throwable {
     public static void main(String[] args) {
         try {
             throw new InvalidInputException("invalid input exception occur");
-        } catch (InvalidInputException invalidInputException) {
-            System.out.println(invalidInputException);
-            invalidInputException.printStackTrace();
+        } catch (InvalidInputException e) {
+            System.out.println(e.message);
+            e.printStackTrace();
         }
     }
 }
