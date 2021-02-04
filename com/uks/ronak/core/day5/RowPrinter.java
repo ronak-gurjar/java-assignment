@@ -21,11 +21,11 @@ public class RowPrinter {
     // this method for EmployeeSortedList
     public void printTabular() throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
-        EmployeeSortedList employee = new EmployeeSortedList(1, "dd", "fff", "dsd", 5);
+        EmpSort empSort = new EmpSort();
         System.out.println("enter collum name for sort ");
         System.out.println("[ecode],[fname],[lname],[salary],[etype]");
         String cName = scanner.nextLine();
-        List<EmployeeSortedList> list = employee.sortedList(cName);
+        List<EmployeeSortedList> list = empSort.sortedList(cName);
         System.out.println("empCode   EmployeeName     EmpType    salary");
         System.out.println("-------------------------------------------------");
         for (EmployeeSortedList employeeSortedList : list) {
