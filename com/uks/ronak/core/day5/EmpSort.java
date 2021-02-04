@@ -53,6 +53,7 @@ public class EmpSort {
 
     List<EmployeeSortedList> list = new ArrayList<>();
 
+    // print details in tabular format
     public void print() {
         for (EmployeeSortedList employeeSortedList : list) {
             System.out.printf("%1s", employeeSortedList.getEmpCode());
@@ -65,17 +66,15 @@ public class EmpSort {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = new Scanner(System.in);
-        EmployeeSortedList employeeSortedList = new EmployeeSortedList(1, "dfd", "Ddd", "dd", 2);
         EmpSort empSort = new EmpSort();
         System.out.println("1 -> default sorting based on empcode ");
         System.out.println("or choose [fname],[lname],[salary],[etype]");
         String cName = scanner.nextLine();
         if (cName.equals("1")) {
             empSort.sortedList("ecode");
-            empSort.print();
         } else {
             empSort.sortedList(cName);
-            empSort.print();
         }
+        empSort.print();
     }
 }

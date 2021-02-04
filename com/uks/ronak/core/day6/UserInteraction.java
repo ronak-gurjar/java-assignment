@@ -7,6 +7,7 @@ import com.uks.ronak.core.day3.CallDateAdd;
 import com.uks.ronak.core.day3.DateAndTime;
 import com.uks.ronak.core.day3.DateDifference;
 import com.uks.ronak.core.day4.FrequencyChecker;
+import com.uks.ronak.core.day5.EmpSort;
 import com.uks.ronak.core.day5.EmployeeSearch;
 import com.uks.ronak.core.day5.EmployeeSortedList;
 
@@ -146,15 +147,15 @@ class UserInteraction {
                 }
                 break;
             case "j":
-                EmployeeSortedList employeeSortedList = new EmployeeSortedList(1, "s", "ss", "ss", 11);
+                EmpSort empSort = new EmpSort();
                 System.out.println("enter collum name [ecode], [fname],[lname],[salary],[etype]");
                 String cName = scanner.nextLine();
                 try {
-                    employeeSortedList.sortedList(cName);
+                    empSort.sortedList(cName);
                 } catch (FileNotFoundException fileNotFoundException) {
                     throw new InvalidInputException("input is not valid");
                 }
-                employeeSortedList.print();
+                empSort.print();
                 break;
             case "k":
                 System.exit(0);
