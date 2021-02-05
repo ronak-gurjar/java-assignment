@@ -3,7 +3,7 @@ package com.uks.ronak.core.day4;
 import java.util.Scanner;
 
 public class Circle {
-    public  static final double PI=3.14;
+    public static final double PI = 3.14;
 
     public double ariaOfCircle(long radius) {
         return (long) (PI * radius * radius);

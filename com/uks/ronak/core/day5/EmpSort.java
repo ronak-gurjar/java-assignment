@@ -20,6 +20,7 @@ public class EmpSort {
         File file = new File("src/com/uks/ronak/core/day5/employeeData.txt");
         Scanner scanner = new Scanner(file);
         String data;
+        List<EmployeeSortedList> list = new ArrayList<>();
         while (scanner.hasNext()) {
             data = scanner.nextLine();
             String[] token = data.split(",");
@@ -33,35 +34,22 @@ public class EmpSort {
                 break;
             case fName:
                 // Collections.sort(list,new FName());
-                list.sort(new EmployeeSortedList.FName());
+                list.sort(new FName());
                 break;
             case lName:
-                list.sort(new EmployeeSortedList.LName());
+                list.sort(new LName());
                 break;
             case eType:
-                list.sort(new EmployeeSortedList.EType());
+                list.sort(new EType());
                 break;
             case salary:
-                list.sort(new EmployeeSortedList.Salary());
+                list.sort(new Salary());
                 break;
             default:
                 System.out.println("wrong choice");
                 break;
         }
         return list;
-    }
-
-    List<EmployeeSortedList> list = new ArrayList<>();
-
-    // print details in tabular format
-    public void print() {
-        for (EmployeeSortedList employeeSortedList : list) {
-            System.out.printf("%1s", employeeSortedList.getEmpCode());
-            System.out.printf("%10s", employeeSortedList.getFirstName() + " ");
-            System.out.printf("%5s", employeeSortedList.getLastName());
-            System.out.printf("%15s", employeeSortedList.getEmpType());
-            System.out.printf("%10s", employeeSortedList.getBasicSalary() + "\n");
-        }
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -75,6 +63,7 @@ public class EmpSort {
         } else {
             empSort.sortedList(cName);
         }
-        empSort.print();
+        // call RowPrinter class static method
+        RowPrinter.printTabular(cName);
     }
 }

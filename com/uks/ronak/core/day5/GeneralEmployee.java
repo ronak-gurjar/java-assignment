@@ -6,11 +6,6 @@ import java.io.IOException;
 
 public class GeneralEmployee extends BaseEmployee {
 
-    @Override
-    public void doWork() {
-        System.out.println("hello world");
-    }
-
     public GeneralEmployee(String firstName, String lastName, String empType, long basicSalary) {
         super(firstName, lastName, empType, basicSalary);
     }

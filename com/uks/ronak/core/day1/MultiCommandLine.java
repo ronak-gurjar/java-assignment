@@ -25,16 +25,13 @@ public class MultiCommandLine {
             System.out.println("num is not valid");
         }
     }
-    // this function for day6 assignment 1
-    public void doOperation() throws InvalidInputException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("enter 1 for addition or 2 for lowercase");
-          String  num = scanner.nextLine();
 
-        if (num.equals("1")) {
+    // this function for day6 assignment 1
+    public void doOperation(int choice) {
+        Scanner scanner = new Scanner(System.in);
+        if (choice == 1) {
             System.out.println("enter three number");
             int[] arr = new int[3];
-
             int sum = 0;
             for (int i = 0; i < 3; i++) {
                 arr[i] = scanner.nextInt();
@@ -50,11 +47,13 @@ public class MultiCommandLine {
 
     public static void main(String[] args) throws InvalidInputException {
         MultiCommandLine multiCommandLine = new MultiCommandLine();
-        // multiCommandLine.doOperation(1, "1", "2", "3", "3","e");
-       // multiCommandLine.doOperation(2, "RONAK", "SIMBA", "HELLO");
+        Scanner scanner = new Scanner(System.in);
         // this is extended class UserNamePassword method
         // multiCommandLine.validate("ronak",1234);
-        // commandline :src>java com.uks.ronak.core.day1.MultiCommandLine
-         multiCommandLine.doOperation();
+        // commandline :src>javac com/uks/ronak/core/day1/MultiCommandLine.java
+        System.out.println("enter 1 for addition or 2 for lowercase");
+        int ch = scanner.nextInt();
+        System.out.println();
+        multiCommandLine.doOperation(ch);
     }
 }

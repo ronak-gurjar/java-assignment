@@ -10,25 +10,20 @@ import java.util.*;
 public class RowReader {
 
     public static List<BaseEmployee> readData(String filePath) {
-        List<BaseEmployee> list = new ArrayList<>();
+        List<BaseEmployee> baseEmployees = new ArrayList<>();
         File file = new File(filePath);
         try (Scanner scanner = new Scanner(file)) {
             String data;
             while (scanner.hasNext()) {
                 data = scanner.nextLine();
                 String[] token = data.split(",");
-                BaseEmployee employee = new BaseEmployee(Integer.parseInt(token[0]), token[1], token[2], token[3], Long.parseLong(token[4])) {
-                    @Override
-                    public void doWork() {
-                        System.out.println("hello world");
-                    }
-                };
-                list.add(employee);
+                BaseEmployee employee = new BaseEmployee(Integer.parseInt(token[0]), token[1], token[2], token[3], Long.parseLong(token[4]));
+                baseEmployees.add(employee);
             }
         } catch (IOException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
-        return list;
+        return baseEmployees;
     }
 
     // this method for RowToFileConverter Class
@@ -53,24 +48,19 @@ public class RowReader {
 
     // this method for employeeSearch class
     public static Map<Integer, BaseEmployee> keyValuePair() {
-        Map<Integer, BaseEmployee> list = new HashMap<>();
+        Map<Integer, BaseEmployee> baseEmployees = new HashMap<>();
         File file = new File("src/com/uks/ronak/core/day5/employeeData.txt");
         try (Scanner scanner = new Scanner(file)) {
             String data;
             while (scanner.hasNext()) {
                 data = scanner.nextLine();
                 String[] token = data.split(",");
-                BaseEmployee employee = new BaseEmployee(token[1], token[2], token[3], Long.parseLong(token[4])) {
-                    @Override
-                    public void doWork() {
-                        System.out.println("");
-                    }
-                };
-                list.put(Integer.parseInt(token[0]), employee);
+                BaseEmployee employee = new BaseEmployee(token[1], token[2], token[3], Long.parseLong(token[4]));
+                baseEmployees.put(Integer.parseInt(token[0]), employee);
             }
         } catch (IOException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
-        return list;
+        return baseEmployees;
     }
 }

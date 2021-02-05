@@ -42,36 +42,36 @@ public class EmployeeSortedList implements Comparable<EmployeeSortedList> {
         return empCode;
     }
 
-    static class FName implements Comparator<EmployeeSortedList> {
+}
 
-        @Override
-        public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-            return o1.firstName.compareTo(o2.firstName);
-        }
+class FName implements Comparator<EmployeeSortedList> {
+
+    @Override
+    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
+        return o1.getFirstName().compareTo(o2.getFirstName());
     }
+}
 
-    static class LName implements Comparator<EmployeeSortedList> {
+class LName implements Comparator<EmployeeSortedList> {
 
-        @Override
-        public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-            return o1.lastName.compareTo(o2.lastName);
-        }
+    @Override
+    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
+        return o1.getLastName().compareTo(o2.getLastName());
     }
+}
 
-    static class EType implements Comparator<EmployeeSortedList> {
-        @Override
-        public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-            return o1.empType.compareTo(o2.empType);
-        }
+class EType implements Comparator<EmployeeSortedList> {
+    @Override
+    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
+        return o1.getEmpType().compareTo(o2.getEmpType());
     }
+}
 
-    static class Salary implements Comparator<EmployeeSortedList> {
+class Salary implements Comparator<EmployeeSortedList> {
 
-        @Override
-        public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-            return (int) (o1.basicSalary - o2.basicSalary);
-        }
+    @Override
+    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
+        return (int) (o1.getBasicSalary() - o2.getBasicSalary());
     }
-
 }
 

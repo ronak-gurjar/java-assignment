@@ -33,7 +33,6 @@ public class DateAndTime {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
             ob.dateTime(pattern, localDateTime.format(formatter));
-
         }
     }
 }

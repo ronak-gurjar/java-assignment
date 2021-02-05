@@ -1,16 +1,10 @@
 package com.uks.ronak.core.day4;
 
-interface IWork {
-    void doWork();
-}
-
-interface IReport {
-    void reportToSenior();
-}
-
-public abstract class BaseEmployee implements IWork {
+public class BaseEmployee implements IWork {
     //abstract method
-    public abstract void doWork();
+    public void doWork() {
+        System.out.println("do work");
+    }
 
     // final  void doWork();// this method cannot be override
     // public static  void doWork();// this method cannot be override
@@ -35,7 +29,6 @@ public abstract class BaseEmployee implements IWork {
         this.firstName = firstName;
         this.lastName = lastName;
         this.empType = empType;
-
     }
 
     // constructor  for RowReader

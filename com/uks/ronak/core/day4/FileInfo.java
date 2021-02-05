@@ -1,5 +1,7 @@
 package com.uks.ronak.core.day4;
 
+import com.uks.ronak.core.day6.InvalidInputException;
+
 import java.io.File;
 import java.util.Scanner;
 
@@ -13,25 +15,22 @@ public class FileInfo {
         System.out.println("is exist = " + file.exists());
         System.out.println("is directory = " + file.isDirectory());
         System.out.println("is file = " + file.isFile());
-        System.out.println("length = " + file.length());
-        try {
-            if (files != null) {
-                for (File value : files) {
-                    System.out.print(value.toString() + " --> ");
-                    System.out.println(value.getUsableSpace());
-                }
+        long totalSize = 0;
+        if (files != null) {
+            for (File value : files) {
+                System.out.print(value.toString() + " --> ");
+                System.out.println(value.length());
+                totalSize += value.length();
             }
-        } catch (NullPointerException e) {
-            System.out.println(e);
+            System.out.println("totalSize dir size -> " + totalSize);
+        } else {
+            System.out.println(file.toString() + " -> " + file.length());
         }
     }
 
     public static void main(String[] args) {
         FileInfo fileInfo = new FileInfo();
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("enter the path ");
-        String path = scanner.nextLine();
-        fileInfo.print(path);
+        fileInfo.print(args[0]);
     }
 }

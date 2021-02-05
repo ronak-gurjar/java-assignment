@@ -32,12 +32,17 @@ public class FrequencyChecker {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("enter the size of array");
-        String size = scanner.nextLine();
+        int size = 0;
+        try {
 
-        String[] string = new String[Integer.parseInt(size)];
+            size = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+        String[] string = new String[size];
         System.out.println("enter the string");
 
-        for (int i = 0; i < Integer.parseInt(size); i++) {
+        for (int i = 0; i < size; i++) {
             string[i] = scanner.nextLine();
         }
         frequencyChecker.frequencyChecker(string);

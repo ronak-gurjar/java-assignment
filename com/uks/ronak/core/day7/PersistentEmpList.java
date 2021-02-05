@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Hashtable;
 import java.util.Scanner;
 
-class persistentEmpList {
+public class PersistentEmpList {
 
     public void serialization(Hashtable<Integer, EmployeeDetail> table) {
         FileOutputStream fileOutputStream;
@@ -41,7 +41,7 @@ class persistentEmpList {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        persistentEmpList emp = new persistentEmpList();
+        PersistentEmpList emp = new PersistentEmpList();
         Scanner scanner = new Scanner(System.in);
         Hashtable<Integer, EmployeeDetail> table = new Hashtable<>();
 

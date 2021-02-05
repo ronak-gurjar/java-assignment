@@ -28,40 +28,44 @@ public class FindInFiles {
     }
 
     // search in file
-    public void search(String string, String filepath) throws FileNotFoundException {
-        int lineNum = 0;
+    public void search(String searchString, String filepath) {
+
         boolean flag = true;
         File file = new File(filepath);
         File[] fileList = file.listFiles();
-        Pattern pattern = Pattern.compile(string, Pattern.CASE_INSENSITIVE);
-        Matcher matcher;
+        Pattern pattern = Pattern.compile(searchString, Pattern.CASE_INSENSITIVE);
         try {
             if (fileList != null) {
                 for (File data : fileList) {
                     if (data.isDirectory()) {
-                        search(string, data.toString());
+                        search(searchString, data.toString());
 
                     } else {
+                        int lineNum = 0;
                         Scanner scanner = new Scanner(data);
                         while (scanner.hasNextLine()) {
                             String data1 = scanner.nextLine();
-                            matcher = pattern.matcher(data1);
+                            Matcher matcher = pattern.matcher(data1);
                             lineNum++;
                             if (matcher.find()) {
-                                System.out.println(data.getAbsolutePath() + "  in \"" + string + "\"" + " " + "found at line number:" + lineNum);
-                                flag = false;
-                                break;
+                                System.out.println(data.getAbsolutePath() + "  in \"" + searchString + "\"" + " " + "found at line number:" + lineNum);
                             }
                         }
                     }
                 }
-                if (flag) {
-                    System.out.println("string not found");
-                }
             } else {
-                System.out.println(file.getAbsoluteFile() + "-->" + "null files");
+                int line = 0;
+                Scanner scanner = new Scanner(file);
+                while (scanner.hasNextLine()) {
+                    String data2 = scanner.nextLine();
+                    Matcher matcher = pattern.matcher(data2);
+                    line++;
+                    if (matcher.find()) {
+                        System.out.println(file.getAbsolutePath() + "  in \"" + searchString + "\"" + " " + "found at line number:" + line);
+                    }
+                }
             }
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | FileNotFoundException e) {
             System.out.println(e);
         }
     }

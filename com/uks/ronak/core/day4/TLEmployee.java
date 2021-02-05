@@ -30,11 +30,13 @@ class TLEmployee extends PLEmployee {
 
         // creating a reference of iWork and iReport and assign to
         // PLEmployee and TlEmployee
-        IWork tl1 = new TLEmployee("ronak", "gurjar");
-        IWork pl1 = new PLEmployee("simba", "joshi");
+        TLEmployee tlEmployee = new TLEmployee("ronak", "gurajr");
+        IWork tl1 = tlEmployee;
+        IWork pl1 = tlEmployee;
 
-        IReport tl2 = new TLEmployee("sandip", "gor");
-        IReport pl2 = new PLEmployee("chirag", "sharma");
+        PLEmployee plEmployee = new PLEmployee("chirah", "soni");
+        IReport tl2 = plEmployee;
+        IReport pl2 = plEmployee;
         // calling interfaces method
         tl1.doWork();
         tl2.reportToSenior();
