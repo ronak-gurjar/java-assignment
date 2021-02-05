@@ -44,34 +44,3 @@ public class EmployeeSortedList implements Comparable<EmployeeSortedList> {
 
 }
 
-class FName implements Comparator<EmployeeSortedList> {
-
-    @Override
-    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-        return o1.getFirstName().compareTo(o2.getFirstName());
-    }
-}
-
-class LName implements Comparator<EmployeeSortedList> {
-
-    @Override
-    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-        return o1.getLastName().compareTo(o2.getLastName());
-    }
-}
-
-class EType implements Comparator<EmployeeSortedList> {
-    @Override
-    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-        return o1.getEmpType().compareTo(o2.getEmpType());
-    }
-}
-
-class Salary implements Comparator<EmployeeSortedList> {
-
-    @Override
-    public int compare(EmployeeSortedList o1, EmployeeSortedList o2) {
-        return (int) (o1.getBasicSalary() - o2.getBasicSalary());
-    }
-}
-
